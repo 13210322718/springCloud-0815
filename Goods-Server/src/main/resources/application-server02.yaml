@@ -14,10 +14,22 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+    open-in-view: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans=true:
+  redis:
+    cluster:
+      nodes:
+        - 192.168.152.128:7001
+        - 192.168.152.128:7002
+        - 192.168.152.128:7003
+        - 192.168.152.128:7004
+        - 192.168.152.128:7005
+        - 192.168.152.128:7006
+      max-redirects: 7
+
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8762/eureka,http://127.0.0.1:8761/eureka
-
-
-
